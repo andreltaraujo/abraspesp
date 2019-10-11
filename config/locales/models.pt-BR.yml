@@ -1,0 +1,39 @@
+'pt-BR':
+  activerecord:
+    models:
+      admin: 
+        one: Administrador
+        other: Administradores
+      user:
+        one: Usuário
+        other: Usuários
+      user_statistic: 
+        one: Estatítica do Usuário
+        other: Estatísicas do Usuário
+    attributes:
+      admin:
+        id: Código
+        email: e-mail
+        password: Senha
+        password_confirmation: Confirme a Senha
+        created_at: Criado em
+        updated_at: Atualizado em 
+      user:
+        id: Código
+        email: e-mail
+        first_name: Nome
+        last_name: Sobrenome
+        password: Senha
+        password_confirmation: Confirme a Senha
+        created_at: Criado em
+        updated_at: Atualizado em
+      user_statistic:
+        right_questions: Respostas Certas
+        wrong_questions: Respostas Erradas
+      user_profile:
+        id: Código
+        address: Endereço
+        gender: Gênero
+        birthdate: Data de Nascimento
+        created_at: Criado em
+        updated_at: Atualizado em
