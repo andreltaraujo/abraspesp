@@ -1,29 +1,163 @@
-<h2>Sign up</h2>
+<div class="login_wrapper"><h1><%= image_tag('logo.png', size:"125x70") %> ABRASPESP</h1></div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="clearfix"></div>
+        <div class="x_content">
+          <!-- Smart Wizard -->
+          <div id="wizard" class="form_wizard wizard_horizontal">
+            <ul class="wizard_steps">
+              <li>
+                <a href="#step-1">
+                  <span class="step_no">1</span>
+                    <span class="step_descr"><%= t('label.Step 1') %><br />
+                      <small><%= t('label.Create Account') %></small>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a href="#step-2">
+                  <span class="step_no">2</span>
+                    <span class="step_descr"><%= t('label.Step 2') %><br />
+                      <small><%= t('label.Personal Data') %></small>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a href="#step-3">
+                  <span class="step_no">3</span>
+                    <span class="step_descr"><%= t('label.Step 3') %><br />
+                      <small><%= t('label.Bank Data') %></small>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a href="#step-4">
+                  <span class="step_no">4</span>
+                    <span class="step_descr"><%= t('label.Step 4') %><br />
+                      <small><%= t('label.Add Dependents') %></small>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a href="#step-5">
+                  <span class="step_no">5</span>
+                    <span class="step_descr"><%= t('label.Step 5') %><br />
+                      <small><%= t('label.Payment') %></small>
+                    </span>
+                </a>
+              </li>
+            </ul>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="login_wrapper">
+              <section class="login_content">
+                <div id="step-1">
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                   class:"form-horizontal") do |f| %>
+                    <h1 id="nome"><%= t('Create Account') %></h1>
+                    
+                    <div class="form-group">
+                      <div>
+                        <%= f.text_field :first_name, autofocus: true, class:"form-control", placeholder:"First Name"%>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <%= f.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+                    </div>
+                    
+                    <div class="form-group">
+                      <%= f.email_field :email, class:"form-control", placeholder:"Email", required:"" %>
+                    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    <div class="form-group">
+                      <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                      <%= f.password_field :password, class:"form-control", placeholder:"Password", required:"" %>
+                    </div>
+                  
+                    <div class="form-group">
+                      <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Password_Confirmation", required:"" %>
+                    </div>
+                  
+                    <div class="actions">
+                      <%= f.submit t('label.Signup'), class:"btn btn-default submit" %>
+                    </div>
+                  
+                    <div class="clearfix"></div>
+                  
+                    <div class="separator">
+                      <p class="change_link">Já Associado?
+                        <%= render "users/shared/links" %>
+                      </p>
+                    <div class="clearfix"></div>
+                    
+                    <div>
+                      <p>Grupo Harmonia Administradora de Benefícios</p>
+                      <p>©2019 All Rights Reserved</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="step-2">
+                  <h2 class="StepTitle">Personal Details</h2>
+                    <p>
+                      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                
+                <div id="step-3">
+                  <h2 class="StepTitle">Bank Data</h2>
+                    <p>
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                
+                <div id="step-4">
+                    <h2 class="StepTitle">Add Dependents</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                
+                <div id="step-5">
+                  <h2 class="StepTitle">Payment</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+                  <% end %>
+              </section>
+            </div> 
+          </div>
+          <!-- End SmartWizard Content -->
+        </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>

@@ -1,0 +1,88 @@
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th><%= translate_method(@admins, :id) %></th>
+                  <th>Name</th>
+                  <th><%= translate_method(@admins, :email) %></th>
+                  <th><%= link_to new_admins_backoffice_admin_path,
+                  class:"btn btn-success btn-circle btn-sm" do %>
+                  <i class="fas fa-plus-circle"></i>
+                  <% end %>
+                  </th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th><%= translate_method(@admins, :id) %></th>
+                  <th>Name</th>
+                  <th><%= translate_method(@admins, :email) %></th>
+                  <th></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <% @admins.each do |admin| %>                    
+                  <tr>
+                    <td><%= admin.id %></td>
+                    <td><%= admin.id %></td>
+                    <td><%= admin.email %></td>
+                    <td><%= link_to edit_admins_backoffice_admin_path(admin),
+                    class:"btn btn-info btn-circle btn-sm" do %>
+                     <i class="fas fa-user-edit"></i>
+                    <% end %>
+                    <%= link_to admins_backoffice_admin_path(admin), method: :delete,
+                     class:"btn btn-danger btn-circle btn-sm", 
+                      data: {confirm: t('messages.admin.confirm', item: admin.email)} do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  <!-- End of Main Content -->
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+<!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+      <a class="btn btn-primary" href="login.html">Logout</a>
+    </div>
+  </div>
+</div>
+</div>

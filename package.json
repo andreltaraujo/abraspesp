@@ -1,5 +1,19 @@
 {
   "name": "abraspesp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "bootstrap-growl-ifightcrime": "^1.1.0",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.7.0",
+    "jquery": "3.4.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "nprogress": "^0.2.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/andreltaraujo/abraspesp.git",
+  "author": "André Araujo <andreguia@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {}
 }

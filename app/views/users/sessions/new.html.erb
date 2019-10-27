@@ -1,26 +1,27 @@
-<h2>Log in - Users</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div class="login_wrapper">
+  <section class="login_content">
+    <h1><%= image_tag('logo.png', size:"125x70") %> ABRASPESP</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h1 id="nome">Login Associado</h1>
+      <div>
+        <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email", required:"" %>
+      </div>
+      <div>
+        <%= f.password_field :password, class:"form-control", placeholder:"Password", required:"" %>
+      </div>
+      <div>
+        <%= f.submit 'Login', class:"btn btn-default submit" %>
+      </div>
+      <div class="clearfix"></div>
+      <div class="separator">
+        <p class="change_link">Não Associado?
+          <%= render "users/shared/links" %>
+        </p>
+      <div class="clearfix"></div>
+      <div>
+        <p>Grupo Harmonia Administradora de Benefícios</p>
+        <p>©2019 All Rights Reserved</p>
+      </div>
+    <% end %>
+  </section>
+</div>
